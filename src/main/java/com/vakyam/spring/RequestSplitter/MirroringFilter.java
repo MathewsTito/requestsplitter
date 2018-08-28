@@ -31,6 +31,8 @@ public class MirroringFilter implements Filter {
     @Autowired
     RemoteService remoteService;
 
+    private static final String MIRRORED_REQUEST = "MIRRORED_REQUEST";
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
@@ -57,12 +59,12 @@ public class MirroringFilter implements Filter {
 
         System.out.println("Inside mirror()");
 
-        if (request.getHeader("mirrored") != null)
+        if (request.getHeader(MIRRORED_REQUEST) != null)
             return;
 
         String method = request.getMethod();
 
-        String uri = "http://localhost:9000/update";
+        String uri = "http://localhost:9000"+request.getRequestURI()+(request.getQueryString()==null?"":"?"+request.getQueryString());
 
         Map<String, String> headers = new HashMap<>();
         HttpHeaders HTTPheaders = new HttpHeaders();
@@ -88,7 +90,7 @@ public class MirroringFilter implements Filter {
         //Create the request Object
         RequestEntity<byte[]> reqEntity = RequestEntity.method(HttpMethod.resolve(method), new URI(uri))
                 .header("HTTP_AUTH_TOKEN", "password")
-                .header("mirrored","true")
+                .header(MIRRORED_REQUEST,"true")
                 .body(body);
 
         //Add all the incoming headers to the request Object
@@ -107,6 +109,7 @@ public class MirroringFilter implements Filter {
 
         //RemoteService rs = (RemoteService) getContext().getBean("remoteService");
 
+        System.out.println("Mirroring request to "+uri);
         remoteService.execute(reqEntity, mirrorResponse.getClass());
 
     }
