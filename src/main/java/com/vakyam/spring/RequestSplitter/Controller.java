@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 
     @RequestMapping("/update")
-    public ResponseVO update(@RequestBody String  request){
+    public ResponseVO update(@RequestBody ResponseVO  request){
 
         System.out.println("Request Received from.."+request);
 

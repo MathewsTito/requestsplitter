@@ -32,6 +32,8 @@ public class MirroringFilter implements Filter {
     RemoteService remoteService;
 
     private static final String MIRRORED_REQUEST = "MIRRORED_REQUEST";
+    private static final String CONTENT_TYPE = "content-type";
+    private static final String HTTP_AUTH_TOKEN = "HTTP_AUTH_TOKEN";
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -82,15 +84,14 @@ public class MirroringFilter implements Filter {
             }
         }
 
-        headers.put("HTTP_AUTH_TOKEN", "dsjfsdjlfjsdlfjlsdj");
-
         InputStream inputStream = request.getInputStream();
         byte[] body = StreamUtils.copyToByteArray(inputStream);
 
         //Create the request Object
         RequestEntity<byte[]> reqEntity = RequestEntity.method(HttpMethod.resolve(method), new URI(uri))
-                .header("HTTP_AUTH_TOKEN", "password")
+                .header(HTTP_AUTH_TOKEN, headers.get(HTTP_AUTH_TOKEN))
                 .header(MIRRORED_REQUEST,"true")
+                .header(CONTENT_TYPE,headers.get(CONTENT_TYPE))
                 .body(body);
 
         //Add all the incoming headers to the request Object
@@ -107,7 +108,6 @@ public class MirroringFilter implements Filter {
 
         byte[] mirrorResponse = new byte[]{};
 
-        //RemoteService rs = (RemoteService) getContext().getBean("remoteService");
 
         System.out.println("Mirroring request to "+uri);
         remoteService.execute(reqEntity, mirrorResponse.getClass());
