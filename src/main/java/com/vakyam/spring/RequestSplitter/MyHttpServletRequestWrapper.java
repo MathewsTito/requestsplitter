@@ -10,8 +10,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Created by tito on 8/26/18.
+ * Author: Tito Mathews
+ * Created On: 08/29/18 6:19 P.M.
+ *
+ * This class wraps the HTTPRequest to allow reading of the HTTP body multiple times.
+ *
+ * Change Log:
+ *
  */
+
 public class MyHttpServletRequestWrapper extends HttpServletRequestWrapper {
 
     private String _body;

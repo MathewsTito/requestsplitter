@@ -10,7 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by tito on 8/26/18.
+ * Author: Tito Mathews
+ * Created On: 08/29/18 6:38 P.M.
+ *
+ * This is a ServletFilter that will wrap the ServletRequest in MyHttpServletRequestWrapper
+ * on its way in.
+ *
+ * Change Log:
+ *
  */
 @Component
 @Order(1)
