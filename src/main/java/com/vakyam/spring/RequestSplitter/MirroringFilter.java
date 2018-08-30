@@ -1,7 +1,5 @@
 package com.vakyam.spring.RequestSplitter;
 
-import com.netflix.zuul.context.RequestContext;
-import org.apache.commons.io.input.CloseShieldInputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;
@@ -35,7 +33,7 @@ import java.util.Map;
 public class MirroringFilter implements Filter {
 
     @Autowired
-    RemoteService remoteService;
+    private RemoteServiceProxy remoteServiceProxy;
 
     private static final String MIRRORED_REQUEST = "MIRRORED_REQUEST";
     private static final String CONTENT_TYPE = "content-type";
@@ -72,7 +70,9 @@ public class MirroringFilter implements Filter {
 
         String method = request.getMethod();
 
-        String uri = "http://localhost:9000"+request.getRequestURI()+(request.getQueryString()==null?"":"?"+request.getQueryString());
+        String uri = remoteServiceProxy.getRemoteHost()
+                        +request.getRequestURI()
+                        +(request.getQueryString()==null?"":"?"+request.getQueryString());
 
         Map<String, String> headers = new HashMap<>();
         HttpHeaders HTTPheaders = new HttpHeaders();
@@ -116,7 +116,7 @@ public class MirroringFilter implements Filter {
 
 
         System.out.println("Mirroring request to "+uri);
-        remoteService.execute(reqEntity, mirrorResponse.getClass());
+        remoteServiceProxy.execute(reqEntity, mirrorResponse.getClass());
 
     }
 }

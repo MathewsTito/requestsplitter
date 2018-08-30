@@ -4,10 +4,7 @@ import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 /**
  * Author: Tito Mathews
@@ -21,21 +18,31 @@ import java.io.InputStreamReader;
 
 public class MyHttpServletRequestWrapper extends HttpServletRequestWrapper {
 
-    private String _body;
+    private byte[] body;
 
     public MyHttpServletRequestWrapper(HttpServletRequest request) throws IOException {
+
         super(request);
-        _body = "";
-        BufferedReader bufferedReader = request.getReader();
-        String line;
-        while ((line = bufferedReader.readLine()) != null){
-            _body += line;
+
+        InputStream is = request.getInputStream();
+
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        int nRead;
+        byte[] data = new byte[16384];
+
+        while ((nRead = is.read(data, 0, data.length)) != -1) {
+            buffer.write(data, 0, nRead);
         }
+
+        buffer.flush();
+
+        body = buffer.toByteArray();
     }
+
 
     @Override
     public ServletInputStream getInputStream() throws IOException {
-        final ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(_body.getBytes());
+        final ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(body);
         return new ServletInputStream() {
 
             private ReadListener readListener;
