@@ -2,6 +2,8 @@ package com.vakyam.spring.example.vo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Arrays;
+
 /**
  * Created by tito on 8/26/18.
  */
@@ -69,7 +71,7 @@ public class ResponseVO {
     }
 
     public String toString(){
-        return field1+":"+field2+":"+field3+":"+field4+":"+field5+":"+field6;
+        return field1+":"+field2+":"+field3+":"+ Arrays.toString(field4)+":"+Arrays.toString(field5)+":"+field6;
     }
 
 }

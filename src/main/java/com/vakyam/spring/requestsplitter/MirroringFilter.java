@@ -62,7 +62,7 @@ public class MirroringFilter implements Filter {
 
     @Override
     public void destroy() {
-
+        logger.debug("destroy() method called!");
     }
 
     private void mirror(HttpServletRequest request) throws URISyntaxException, IOException {
