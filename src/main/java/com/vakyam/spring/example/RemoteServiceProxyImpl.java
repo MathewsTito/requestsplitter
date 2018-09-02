@@ -1,6 +1,6 @@
 package com.vakyam.spring.example;
 
-import com.vakyam.spring.RequestSplitter.RemoteServiceProxy;
+import com.vakyam.spring.requestsplitter.RemoteServiceProxy;
 import org.springframework.stereotype.Component;
 
 /**
