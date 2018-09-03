@@ -45,8 +45,6 @@ public class MyHttpServletRequestWrapper extends HttpServletRequestWrapper {
         final ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(body);
         return new ServletInputStream() {
 
-            private ReadListener readListener;
-
             @Override
             public boolean isFinished() {
                 return (byteArrayInputStream.available() <= 0);
@@ -59,7 +57,7 @@ public class MyHttpServletRequestWrapper extends HttpServletRequestWrapper {
 
             @Override
             public void setReadListener(ReadListener readListener) {
-                this.readListener = readListener;
+                //no one is interested in listening
             }
 
             public int read() throws IOException {

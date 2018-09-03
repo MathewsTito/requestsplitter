@@ -1,7 +1,6 @@
 package com.vakyam.spring.requestsplitter;
 
 import org.springframework.http.RequestEntity;
-import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,7 +14,8 @@ public abstract class RemoteServiceProxy {
 
     @Async
     public void execute(RequestEntity r, Class reponseType){
-        getRestTemplate().exchange(r,reponseType);
+        RestTemplate restTemplate = getRestTemplate();
+        restTemplate.exchange(r,reponseType);
     }
 
     private RestTemplate getRestTemplate(){
