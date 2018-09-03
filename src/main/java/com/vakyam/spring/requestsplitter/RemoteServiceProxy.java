@@ -14,15 +14,17 @@ public abstract class RemoteServiceProxy {
 
     @Async
     public void execute(RequestEntity r, Class reponseType){
-        RestTemplate restTemplate = getRestTemplate();
-        restTemplate.exchange(r,reponseType);
+        RestTemplate rt = getRestTemplate();
+        rt.exchange(r,reponseType);
     }
 
     private RestTemplate getRestTemplate(){
         if (restTemplate != null)
             return restTemplate;
 
-        return restTemplate = new RestTemplate();
+        restTemplate = new RestTemplate();
+
+        return restTemplate;
     }
 
     public abstract String getRemoteHost();
