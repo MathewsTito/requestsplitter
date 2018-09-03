@@ -15,15 +15,7 @@ public abstract class RemoteServiceProxy {
 
     @Async
     public void execute(RequestEntity r, Class reponseType){
-        try {
-            Thread.sleep(10000);
-
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            throw new RuntimeException(e.getMessage());
-        }
-        ResponseEntity resp = getRestTemplate().exchange(r,reponseType);
-
+        getRestTemplate().exchange(r,reponseType);
     }
 
     private RestTemplate getRestTemplate(){

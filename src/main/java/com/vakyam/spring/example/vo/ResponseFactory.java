@@ -7,10 +7,14 @@ import java.util.Random;
  */
 public class ResponseFactory {
 
-    private static final String seed = "This is a string that seeds String values";
+    private static final String SEED = "This is a string that seeds String values";
+
+    private ResponseFactory(){
+        //prevent instantiation using a private default constructor
+    }
 
     public static String getString(int length){
-        return seed.substring(0,0+length);
+        return SEED.substring(0,0+length);
     }
 
     public static int getInt(){

@@ -1,5 +1,7 @@
 package com.vakyam.spring.requestsplitter;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -21,9 +23,12 @@ import java.io.IOException;
 @Component
 @Order(1)
 public class MyHttpServletRequestWrapperFilter implements Filter {
+
+    private static final Log logger = LogFactory.getLog(MirroringFilter.class);
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-
+        //Nothing to configure
     }
 
     @Override
@@ -36,12 +41,12 @@ public class MyHttpServletRequestWrapperFilter implements Filter {
             filterChain.doFilter(servletRequest, servletResponse);
         } catch (Exception exception) {
             ((HttpServletResponse) servletResponse).sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "ERROR");
-            System.out.println("MyHttpServletRequestWrapperFilter.doFilter() exception: "+exception.getMessage());
+            logger.error("MyHttpServletRequestWrapperFilter.doFilter() exception: "+exception.getMessage());
         }
     }
 
     @Override
     public void destroy() {
-
+        //Nothing to cleanup
     }
 }
