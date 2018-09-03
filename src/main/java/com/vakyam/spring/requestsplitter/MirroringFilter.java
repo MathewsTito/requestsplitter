@@ -50,15 +50,15 @@ public class MirroringFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-
+        //Nothing to initialize
     }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         try {
             mirror((HttpServletRequest) servletRequest);
-        } catch (Throwable t) {
-            t.printStackTrace();
+        } catch (Exception e) {
+            logger.warn(e.toString());
         }
 
         filterChain.doFilter(servletRequest, servletResponse);
@@ -90,8 +90,12 @@ public class MirroringFilter implements Filter {
                         +request.getRequestURI()
                         +(request.getQueryString()==null?"":"?"+request.getQueryString());
 
+        logger.debug(uri);
+        if(!uri.matches("[a-zA-Z0-9/?&%$:]++"))
+            return;
+
         Map<String, String> headers = new HashMap<>();
-        HttpHeaders HTTPheaders = new HttpHeaders();
+        HttpHeaders httpHeaders = new HttpHeaders();
 
         Enumeration<String> headerNames = request.getHeaderNames();
 
@@ -103,7 +107,7 @@ public class MirroringFilter implements Filter {
                 while (values.hasMoreElements()) {
                     String value = values.nextElement();
                     headers.put(name, value);
-                    HTTPheaders.add(name, value);
+                    httpHeaders.add(name, value);
 
                 }
             }
@@ -123,10 +127,9 @@ public class MirroringFilter implements Filter {
         Iterator<String> i = headers.keySet().iterator();
         while (i.hasNext()) {
             String thisHeaderName = i.next();
-            //reqEntity.HeadersBuilder.header(thisHeaderName, headers.get(thisHeaderName));
             try {
                 reqEntity.getHeaders().set(thisHeaderName, headers.get(thisHeaderName));
-            } catch (Throwable e) {
+            } catch (Exception e) {
                 logger.debug("name=" + thisHeaderName + "," + headers.get(thisHeaderName));
             }
         }
