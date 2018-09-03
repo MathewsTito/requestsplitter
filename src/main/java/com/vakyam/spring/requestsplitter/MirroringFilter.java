@@ -86,12 +86,17 @@ public class MirroringFilter implements Filter {
         if (remoteHost == null || remoteHost.trim().length() == 0)
             return;
 
-        if(!request.getRequestURI().matches("[a-zA-Z0-9/?&%$:]++"))
+        String requestURI = request.getRequestURI();
+        if(!requestURI.matches("[a-zA-Z0-9/?&%$:]++"))
+            return;
+
+        String requestQS = request.getQueryString();
+        if(requestQS != null && !requestQS.matches("[a-zA-Z0-9/?&%$:]++"))
             return;
 
         String uri = remoteHost
-                        +request.getRequestURI()
-                        +(request.getQueryString()==null?"":"?"+request.getQueryString());
+                        +requestURI
+                        +(requestQS==null?"":"?"+requestQS);
 
         logger.debug(uri);
 
