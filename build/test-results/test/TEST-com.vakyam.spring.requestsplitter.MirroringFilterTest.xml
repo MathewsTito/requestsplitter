@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.vakyam.spring.requestsplitter.MirroringFilterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-09-03T14:15:56" hostname="sirius" time="0.274">
+  <properties/>
+  <testcase name="testFilterBypassOnNullHost" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.233"/>
+  <testcase name="testFilterBypassOnHeader" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.005"/>
+  <testcase name="testFilter" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.035"/>
+  <system-out><![CDATA[08:15:57.008 [Test worker] DEBUG com.vakyam.spring.requestsplitter.MirroringFilter - Inside mirror()
+08:15:57.026 [Test worker] DEBUG com.vakyam.spring.requestsplitter.MirroringFilter - Inside mirror()
+08:15:57.031 [Test worker] DEBUG com.vakyam.spring.requestsplitter.MirroringFilter - Inside mirror()
+08:15:57.062 [Test worker] DEBUG com.vakyam.spring.requestsplitter.MirroringFilter - Mirroring request to http://localhost:8080/read
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -34,14 +34,19 @@ import java.util.Map;
 @Order(2)
 public class MirroringFilter implements Filter {
 
-    @Autowired
     private RemoteServiceProxy remoteServiceProxy;
 
-        private static final String MIRRORED_REQUEST = "MIRRORED_REQUEST";
+    private static final String MIRRORED_REQUEST = "MIRRORED_REQUEST";
     private static final String CONTENT_TYPE = "content-type";
     private static final String HTTP_AUTH_TOKEN = "HTTP_AUTH_TOKEN";
 
     private static final Log logger = LogFactory.getLog(MirroringFilter.class);
+
+
+    @Autowired
+    public MirroringFilter(RemoteServiceProxy rsp){
+        remoteServiceProxy = rsp;
+    }
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

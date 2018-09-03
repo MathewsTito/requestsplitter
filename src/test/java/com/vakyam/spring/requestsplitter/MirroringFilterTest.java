@@ -26,9 +26,11 @@ public class MirroringFilterTest {
     public void testFilter(){
 
         try {
-            MirroringFilter filterToTest = new MirroringFilter();
 
             RemoteServiceProxy mockrsp = Mockito.mock(RemoteServiceProxy.class);
+
+            MirroringFilter filterToTest = new MirroringFilter(mockrsp);
+
 
             HttpServletRequest mockitoReq = Mockito.mock(HttpServletRequest.class);
             HttpServletResponse mockitoRes = Mockito.mock(HttpServletResponse.class);
@@ -89,9 +91,9 @@ public class MirroringFilterTest {
     @Test
     public void testFilterBypassOnNullHost(){
 
-        MirroringFilter filterToTest = new MirroringFilter();
-
         RemoteServiceProxy rsp = Mockito.mock(RemoteServiceProxy.class);
+
+        MirroringFilter filterToTest = new MirroringFilter(rsp);
 
         HttpServletRequest mockitoReq = Mockito.mock(HttpServletRequest.class);
         HttpServletResponse mockitoRes = Mockito.mock(HttpServletResponse.class);
@@ -113,9 +115,10 @@ public class MirroringFilterTest {
     @Test
     public void testFilterBypassOnHeader(){
 
-        MirroringFilter filterToTest = new MirroringFilter();
-
         RemoteServiceProxy rsp = Mockito.mock(RemoteServiceProxy.class);
+
+        MirroringFilter filterToTest = new MirroringFilter(rsp);
+
 
         HttpServletRequest mockitoReq = Mockito.mock(HttpServletRequest.class);
         HttpServletResponse mockitoRes = Mockito.mock(HttpServletResponse.class);
