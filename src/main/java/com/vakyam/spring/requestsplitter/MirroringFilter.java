@@ -37,7 +37,7 @@ public class MirroringFilter implements Filter {
     @Autowired
     private RemoteServiceProxy remoteServiceProxy;
 
-    private static final String MIRRORED_REQUEST = "MIRRORED_REQUEST";
+        private static final String MIRRORED_REQUEST = "MIRRORED_REQUEST";
     private static final String CONTENT_TYPE = "content-type";
     private static final String HTTP_AUTH_TOKEN = "HTTP_AUTH_TOKEN";
 
@@ -89,15 +89,18 @@ public class MirroringFilter implements Filter {
         HttpHeaders HTTPheaders = new HttpHeaders();
 
         Enumeration<String> headerNames = request.getHeaderNames();
-        while (headerNames.hasMoreElements()) {
-            String name = headerNames.nextElement();
-            Enumeration<String> values = request.getHeaders(name);
 
-            while (values.hasMoreElements()) {
-                String value = values.nextElement();
-                headers.put(name, value);
-                HTTPheaders.add(name, value);
+        if (headerNames != null) {
+            while (headerNames.hasMoreElements()) {
+                String name = headerNames.nextElement();
+                Enumeration<String> values = request.getHeaders(name);
 
+                while (values.hasMoreElements()) {
+                    String value = values.nextElement();
+                    headers.put(name, value);
+                    HTTPheaders.add(name, value);
+
+                }
             }
         }
 
