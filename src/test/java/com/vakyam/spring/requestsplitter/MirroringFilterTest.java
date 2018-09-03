@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.Charset;
 
 /**
  * Created by tito on 9/2/18.
@@ -33,10 +35,24 @@ public class MirroringFilterTest {
             FilterChain mockFilterChain = Mockito.mock(FilterChain.class);
 
             Mockito.when(mockrsp.getRemoteHost()).thenReturn("http://localhost:8080");
-            Mockito.when(mockitoReq.getInputStream()).thenReturn(new ServletInputStream() {
+
+
+            ServletInputStream servletInputStream =new ServletInputStream(){
+
+                InputStream is = new ByteArrayInputStream(Charset.forName("UTF-16").encode("{\"field1\" : \"value1\"}").array());
+
+                @Override
+                public void setReadListener(ReadListener readListener){
+
+                }
+
                 @Override
                 public boolean isFinished() {
-                    return true;
+                    try {
+                        return (is.available() <= 0);
+                    } catch (IOException e){
+                        return true;
+                    }
                 }
 
                 @Override
@@ -45,15 +61,12 @@ public class MirroringFilterTest {
                 }
 
                 @Override
-                public void setReadListener(ReadListener readListener) {
-
-                }
-
-                @Override
                 public int read() throws IOException {
-                    return 0;
+                    return is.read();
                 }
-            });
+            };
+
+            Mockito.when(mockitoReq.getInputStream()).thenReturn(servletInputStream);
 
             Mockito.when(mockitoReq.getMethod()).thenReturn("POST");
             Mockito.when(mockitoReq.getRequestURI()).thenReturn("/read");

@@ -53,7 +53,7 @@ public class MirroringFilter implements Filter {
         try {
             mirror((HttpServletRequest) servletRequest);
         } catch (Throwable t) {
-
+            t.printStackTrace();
         }
 
         filterChain.doFilter(servletRequest, servletResponse);
