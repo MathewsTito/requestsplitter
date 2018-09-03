@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.vakyam.spring.requestsplitter.MirroringFilterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-09-03T15:53:11" hostname="saturn.local" time="0.093">
+<testsuite name="com.vakyam.spring.requestsplitter.MirroringFilterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-09-03T15:58:33" hostname="saturn.local" time="0.089">
   <properties/>
-  <testcase name="testFilterBypassOnNullHost" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.08"/>
-  <testcase name="testFilterBypassOnHeader" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.004"/>
-  <testcase name="testFilter" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.009"/>
-  <system-out><![CDATA[2018-09-03 09:53:11.382 DEBUG 4939 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
-2018-09-03 09:53:11.393 DEBUG 4939 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
-2018-09-03 09:53:11.397 DEBUG 4939 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
-2018-09-03 09:53:11.397 DEBUG 4939 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : http://localhost:8080/read
-2018-09-03 09:53:11.402 DEBUG 4939 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Mirroring request to http://localhost:8080/read
+  <testcase name="testFilterBypassOnNullHost" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.078"/>
+  <testcase name="testFilterBypassOnHeader" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.003"/>
+  <testcase name="testFilter" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.008"/>
+  <system-out><![CDATA[2018-09-03 09:58:33.873 DEBUG 5485 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
+2018-09-03 09:58:33.884 DEBUG 5485 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
+2018-09-03 09:58:33.888 DEBUG 5485 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
+2018-09-03 09:58:33.888 DEBUG 5485 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : http://localhost:8080/read
+2018-09-03 09:58:33.893 DEBUG 5485 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Mirroring request to http://localhost:8080/read
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
