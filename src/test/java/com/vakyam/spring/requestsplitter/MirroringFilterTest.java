@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.junit.runner.Runner;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.servlet.FilterChain;
@@ -23,7 +24,7 @@ import java.nio.charset.Charset;
 /**
  * Created by tito on 9/2/18.
  */
-@RunWith(Runner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 public class MirroringFilterTest {
 
     @Test
