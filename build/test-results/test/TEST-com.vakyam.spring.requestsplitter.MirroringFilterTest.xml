@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.vakyam.spring.requestsplitter.MirroringFilterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-09-03T15:47:03" hostname="saturn.local" time="0.244">
+<testsuite name="com.vakyam.spring.requestsplitter.MirroringFilterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-09-03T15:53:11" hostname="saturn.local" time="0.093">
   <properties/>
-  <testcase name="testFilterBypassOnNullHost" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.191"/>
+  <testcase name="testFilterBypassOnNullHost" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.08"/>
   <testcase name="testFilterBypassOnHeader" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.004"/>
-  <testcase name="testFilter" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.049"/>
-  <system-out><![CDATA[09:47:03.416 [Test worker] DEBUG com.vakyam.spring.requestsplitter.MirroringFilter - Inside mirror()
-09:47:03.432 [Test worker] DEBUG com.vakyam.spring.requestsplitter.MirroringFilter - Inside mirror()
-09:47:03.435 [Test worker] DEBUG com.vakyam.spring.requestsplitter.MirroringFilter - Inside mirror()
-09:47:03.436 [Test worker] DEBUG com.vakyam.spring.requestsplitter.MirroringFilter - http://localhost:8080/read
-09:47:03.481 [Test worker] DEBUG com.vakyam.spring.requestsplitter.MirroringFilter - Mirroring request to http://localhost:8080/read
+  <testcase name="testFilter" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.009"/>
+  <system-out><![CDATA[2018-09-03 09:53:11.382 DEBUG 4939 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
+2018-09-03 09:53:11.393 DEBUG 4939 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
+2018-09-03 09:53:11.397 DEBUG 4939 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
+2018-09-03 09:53:11.397 DEBUG 4939 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : http://localhost:8080/read
+2018-09-03 09:53:11.402 DEBUG 4939 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Mirroring request to http://localhost:8080/read
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
