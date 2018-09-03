@@ -3,7 +3,9 @@ package com.vakyam.spring.requestsplitter;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.JUnitCore;
 import org.junit.runner.RunWith;
+import org.junit.runner.Runner;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -21,8 +23,7 @@ import java.nio.charset.Charset;
 /**
  * Created by tito on 9/2/18.
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest
+@RunWith(Runner.class)
 public class MirroringFilterTest {
 
     @Test
