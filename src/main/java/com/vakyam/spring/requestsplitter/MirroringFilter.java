@@ -83,6 +83,8 @@ public class MirroringFilter implements Filter {
 
         //If remotehost is not provided.. abort mirroring and return without error
         String remoteHost = remoteServiceProxy.getRemoteHost();
+        logger.debug("remotehost="+remoteHost);
+
         if (remoteHost == null || remoteHost.trim().length() == 0)
             return;
 
@@ -92,12 +94,10 @@ public class MirroringFilter implements Filter {
                         +requestURI
                         +(requestQS==null?"":"?"+requestQS);
 
-        if (!uri.matches("[a-zA-Z0-9/?&%$:]++")){
+        logger.debug("uri="+uri);
+        if (!uri.matches("[a-zA-Z0-9/?&%$:=]++")){
             return;
         }
-
-        logger.debug(uri);
-
 
         Map<String, String> headers = new HashMap<>();
         HttpHeaders httpHeaders = new HttpHeaders();

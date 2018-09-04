@@ -79,17 +79,25 @@ public class MirroringFilterTest {
 
             Mockito.when(mockitoReq.getMethod()).thenReturn("POST");
             Mockito.when(mockitoReq.getRequestURI()).thenReturn("/read");
-            Mockito.when(mockitoReq.getHeader("MIRRORED_REQUEST")).thenReturn(null);
+            //Mockito.when(mockitoReq.getHeader("MIRRORED_REQUEST")).thenReturn(null);
+
+            System.out.println("***************1");
 
             ArrayList<String> h1 = new ArrayList<>();
             h1.add("content-type");
             Mockito.when(mockitoReq.getHeaders("content-type")).thenReturn(Collections.enumeration(h1));
 
+            System.out.println("***************2");
+
             Mockito.when(mockitoReq.getQueryString()).thenReturn("field1=value1");
+
+            System.out.println("***************3");
 
             ArrayList<String> h = new ArrayList<>();
             h.add("content-type");
             Mockito.when(mockitoReq.getHeaderNames()).thenReturn(Collections.enumeration(h));
+
+            System.out.println("***************4");
 
 
             filterToTest.doFilter(mockitoReq, mockitoRes, mockFilterChain);

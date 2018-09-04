@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ResponseVO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">requestsplitter</a> &gt; <a href="index.source.html" class="el_package">com.vakyam.spring.example.vo</a> &gt; <span class="el_source">ResponseVO.java</span></div><h1>ResponseVO.java</h1><pre class="source lang-java linenums">package com.vakyam.spring.example.vo;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Arrays;
+
+/**
+ * Created by tito on 8/26/18.
+ */
+<span class="nc" id="L10">public class ResponseVO {</span>
+
+    @JsonProperty(&quot;field1&quot;)
+    private String field1;
+<span class="nc" id="L14">    @JsonProperty(&quot;field2&quot;)</span>
+    private String field2 = null;
+    @JsonProperty(&quot;field3&quot;)
+    private int field3;
+    @JsonProperty(&quot;field4&quot;)
+    private String[] field4;
+    @JsonProperty(&quot;field5&quot;)
+    private int[] field5;
+    @JsonProperty(&quot;field6&quot;)
+    private NestedObjectVO field6;
+
+    public String getField1() {
+<span class="nc" id="L26">        return field1;</span>
+    }
+
+    public void setField1(String field1) {
+<span class="nc" id="L30">        this.field1 = field1;</span>
+<span class="nc" id="L31">    }</span>
+
+    public String getField2() {
+<span class="nc" id="L34">        return field2;</span>
+    }
+
+    public void setField2(String field2) {
+<span class="nc" id="L38">        this.field2 = field2;</span>
+<span class="nc" id="L39">    }</span>
+
+    public int getField3() {
+<span class="nc" id="L42">        return field3;</span>
+    }
+
+    public void setField3(int field3) {
+<span class="nc" id="L46">        this.field3 = field3;</span>
+<span class="nc" id="L47">    }</span>
+
+    public String[] getField4() {
+<span class="nc" id="L50">        return field4;</span>
+    }
+
+    public void setField4(String[] field4) {
+<span class="nc" id="L54">        this.field4 = field4;</span>
+<span class="nc" id="L55">    }</span>
+
+    public int[] getField5() {
+<span class="nc" id="L58">        return field5;</span>
+    }
+
+    public void setField5(int[] field5) {
+<span class="nc" id="L62">        this.field5 = field5;</span>
+<span class="nc" id="L63">    }</span>
+
+    public NestedObjectVO getField6() {
+<span class="nc" id="L66">        return field6;</span>
+    }
+
+    public void setField6(NestedObjectVO field6) {
+<span class="nc" id="L70">        this.field6 = field6;</span>
+<span class="nc" id="L71">    }</span>
+
+    public String toString(){
+<span class="nc" id="L74">        return field1+&quot;:&quot;+field2+&quot;:&quot;+field3+&quot;:&quot;+ Arrays.toString(field4)+&quot;:&quot;+Arrays.toString(field5)+&quot;:&quot;+field6;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>
