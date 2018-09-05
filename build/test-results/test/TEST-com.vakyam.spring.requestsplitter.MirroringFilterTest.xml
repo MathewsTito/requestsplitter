@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.vakyam.spring.requestsplitter.MirroringFilterTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2018-09-04T13:18:21" hostname="sirius" time="0.262">
+<testsuite name="com.vakyam.spring.requestsplitter.MirroringFilterTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2018-09-05T02:49:55" hostname="saturn.local" time="0.163">
   <properties/>
-  <testcase name="testFilterNullQueryString" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.245"/>
-  <testcase name="testFilterBypassOnNullHost" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.003"/>
-  <testcase name="testFilterBypassOnHeader" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.003"/>
-  <testcase name="testFilterInvalidURI" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.003"/>
-  <testcase name="testFilter" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.006"/>
-  <system-out><![CDATA[2018-09-04 07:18:21.512  INFO 4560 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.vakyam.spring.requestsplitter.MirroringFilterTest], using DelegatingSmartContextLoader
-2018-09-04 07:18:21.513  INFO 4560 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.vakyam.spring.requestsplitter.MirroringFilterTest]: no resource found for suffixes {-context.xml}.
-2018-09-04 07:18:21.514  INFO 4560 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.vakyam.spring.requestsplitter.MirroringFilterTest]: MirroringFilterTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2018-09-04 07:18:21.516  INFO 4560 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-2018-09-04 07:18:21.517  INFO 4560 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6c26fbcf, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1f6ef180, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7b02e00, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@642e46fa, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3f8d3133, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@578725b3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5141d16d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@474e4429, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@111cf15a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7f58f477]
-2018-09-04 07:18:21.520  INFO 4560 --- [    Test worker] o.s.c.support.GenericApplicationContext  : Refreshing org.springframework.context.support.GenericApplicationContext@5b34f1f8: startup date [Tue Sep 04 07:18:21 MDT 2018]; root of context hierarchy
-2018-09-04 07:18:21.767 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
-2018-09-04 07:18:21.770 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : remotehost=http://localhost:8080
-2018-09-04 07:18:21.771 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : uri=http://localhost:8080/read
-2018-09-04 07:18:21.780 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Mirroring request to http://localhost:8080/read
-2018-09-04 07:18:21.793 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
-2018-09-04 07:18:21.794 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : remotehost=http://localhost:8080
-2018-09-04 07:18:21.794 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : uri=http://localhost:8080../bin
-2018-09-04 07:18:21.797 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
-2018-09-04 07:18:21.800 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
-2018-09-04 07:18:21.800 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : remotehost=null
+  <testcase name="testFilterNullQueryString" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.153"/>
+  <testcase name="testFilterBypassOnNullHost" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.002"/>
+  <testcase name="testFilterBypassOnHeader" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.001"/>
+  <testcase name="testFilterInvalidURI" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.001"/>
+  <testcase name="testFilter" classname="com.vakyam.spring.requestsplitter.MirroringFilterTest" time="0.003"/>
+  <system-out><![CDATA[2018-09-04 20:49:55.248  INFO 23483 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.vakyam.spring.requestsplitter.MirroringFilterTest], using DelegatingSmartContextLoader
+2018-09-04 20:49:55.249  INFO 23483 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.vakyam.spring.requestsplitter.MirroringFilterTest]: no resource found for suffixes {-context.xml}.
+2018-09-04 20:49:55.250  INFO 23483 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.vakyam.spring.requestsplitter.MirroringFilterTest]: MirroringFilterTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-09-04 20:49:55.252  INFO 23483 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-09-04 20:49:55.253  INFO 23483 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1df314ef, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@ea16d59, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3c96116b, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5766b936, org.springframework.test.context.support.DirtiesContextTestExecutionListener@52378b59, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5779efe3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5b68a12e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@39a51c7c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@57262552, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4f38dea2]
+2018-09-04 20:49:55.259  INFO 23483 --- [    Test worker] o.s.c.support.GenericApplicationContext  : Refreshing org.springframework.context.support.GenericApplicationContext@2f3e7144: startup date [Tue Sep 04 20:49:55 MDT 2018]; root of context hierarchy
+2018-09-04 20:49:55.413 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
+2018-09-04 20:49:55.415 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : remotehost=http://localhost:8080
+2018-09-04 20:49:55.415 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : uri=http://localhost:8080/read
+2018-09-04 20:49:55.422 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Mirroring request to http://localhost:8080/read
+2018-09-04 20:49:55.431 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
+2018-09-04 20:49:55.431 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : remotehost=http://localhost:8080
+2018-09-04 20:49:55.431 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : uri=http://localhost:8080../bin
+2018-09-04 20:49:55.433 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
+2018-09-04 20:49:55.435 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
+2018-09-04 20:49:55.435 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : remotehost=null
 ***************1
 ***************2
 ***************3
 ***************4
-2018-09-04 07:18:21.805 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
-2018-09-04 07:18:21.806 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : remotehost=http://localhost:8080
-2018-09-04 07:18:21.806 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : uri=http://localhost:8080/read?field1=value1
-2018-09-04 07:18:21.807 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : name=content-type,content-type
-2018-09-04 07:18:21.807 DEBUG 4560 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Mirroring request to http://localhost:8080/read?field1=value1
+2018-09-04 20:49:55.438 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Inside mirror()
+2018-09-04 20:49:55.438 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : remotehost=http://localhost:8080
+2018-09-04 20:49:55.438 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : uri=http://localhost:8080/read?field1=value1
+2018-09-04 20:49:55.439 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : name=content-type,content-type
+2018-09-04 20:49:55.439 DEBUG 23483 --- [    Test worker] c.v.s.requestsplitter.MirroringFilter    : Mirroring request to http://localhost:8080/read?field1=value1
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
